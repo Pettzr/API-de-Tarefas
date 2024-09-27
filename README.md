@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/10b7d547-5d67-44e1-9012-826062af036f)# API de Lista de Tarefas
+# API de Lista de Tarefas
 
 ## Instalação
 
