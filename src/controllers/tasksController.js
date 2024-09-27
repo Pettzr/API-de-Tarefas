@@ -11,10 +11,10 @@ const { TaskPostServices,
 // Controler da rota POST de tarefas
 async function TaskPostController (req, res) {
     let {title, description} = req.body;
-    title = title.trim()
-    description = description.trim()
+    title ? title = title.trim() : null
+    description ? description = description.trim() : description = ''
     
-    if (title !== ""){
+    if (title && title !== ""){
         try {
             const task = await TaskPostServices(title, description);
             res.status(201).json(task);
@@ -79,10 +79,10 @@ async function TaskGetByTitleController (req, res) {
 async function TaskPatchByIdController(req, res) {
     const { id } = req.params;
     let {title, description} = req.body;
-    title = title.trim()
-    description = description.trim()
+    title ? title = title.trim() : null
+    description ? description = description.trim() : description = ''
 
-    if (title !== "") {
+    if (title && title !== "") {
         try {
             const task = await TaskPatchByIdServices(id, title, description);
             if (task) {
